@@ -129,7 +129,8 @@ print("⏳ שלב 4: מתחבר ל-Pinecone ומעלה את הוקטורים..."
 
 # התחברות ל-Pinecone API
 pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
-pinecone_index = pc.Index("PINECONE_INDEX_NAME")
+# pinecone_index = pc.Index("PINECONE_INDEX_NAME")
+pinecone_index = pc.Index(os.environ.get("PINECONE_INDEX_NAME"))
 
 # הגדרת ה-Vector Store
 vector_store = PineconeVectorStore(pinecone_index=pinecone_index)
