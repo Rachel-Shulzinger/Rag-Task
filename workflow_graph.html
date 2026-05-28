@@ -88,8 +88,8 @@
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#3B82F6", "font": {"color": "#111827"}, "id": 1, "label": "Validate Input\n(Step 1)", "shape": "box"}, {"color": "#10B981", "font": {"color": "#111827"}, "id": 2, "label": "Retrieve \u0026 Score\n(Step 2)", "shape": "box"}, {"color": "#8B5CF6", "font": {"color": "#111827"}, "id": 3, "label": "Gemini Generator\n(Step 3)", "shape": "box"}]);
-                  edges = new vis.DataSet([{"arrows": "to", "color": "#2563EB", "from": 1, "label": "RetrieveEvent", "to": 2}, {"arrows": "to", "color": "#059669", "from": 2, "label": "GenerationEvent", "to": 3}]);
+                  nodes = new vis.DataSet([{"color": "#3B82F6", "font": {"color": "#111827"}, "id": 1, "label": "Validate Input\n(Step 1)", "shape": "box"}, {"color": "#F59E0B", "font": {"color": "#111827"}, "id": 2, "label": "Intent Router\n(Step 2)", "shape": "diamond"}, {"color": "#10B981", "font": {"color": "#111827"}, "id": 3, "label": "Vector Search\n(Step 3a)", "shape": "box"}, {"color": "#EC4899", "font": {"color": "#111827"}, "id": 4, "label": "Structured JSON\n(Step 3b)", "shape": "box"}, {"color": "#8B5CF6", "font": {"color": "#111827"}, "id": 5, "label": "Gemini Generator\n(Step 4)", "shape": "box"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "#2563EB", "from": 1, "label": "RouteEvent", "to": 2}, {"arrows": "to", "color": "#059669", "from": 2, "label": "RetrieveEvent", "to": 3}, {"arrows": "to", "color": "#DB2777", "from": 2, "label": "StructuredSearchEvent", "to": 4}, {"arrows": "to", "color": "#059669", "from": 3, "label": "GenerationEvent", "to": 5}, {"arrows": "to", "color": "#8B5CF6", "from": 4, "label": "GenerationEvent", "to": 5}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

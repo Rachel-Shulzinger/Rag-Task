@@ -38,9 +38,6 @@ wheels/
 *.swo
 *~
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
 # OS
 .DS_Store
 Thumbs.db
